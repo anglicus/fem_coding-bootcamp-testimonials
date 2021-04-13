@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
+
+@keyframes exit-left {
+    from {
+        left: 0%;
+    }
+
+    to {
+        left: -100%;
+    }
+}
+
+@keyframes enter-left {
+    from {
+        left: 100%;
+    }
+
+    to {
+        left: 0%;
+    }
+}
+
+@keyframes exit-right {
+    from {
+        right: 0%;
+    }
+
+    to {
+        right: -100%;
+    }
+}
+
+@keyframes enter-right {
+    from {
+        right: 100%;
+    }
+
+    to {
+        right: 0%;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        visibility: hidden;
+        scale: 2 2;
+        opacity: 0;
+    }
+
+    66% {
+        opacity: .3;
+    }
+
+    to {
+        scale: 1 1;
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    33% {
+        opacity: .3;
+    }
+
+    to {
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+
+:root {
+    --dark-blue: hsl(240, 38%, 20%);
+    --grayish-blue: hsl(240, 18%, 77%);
+}
+
+html {
+    font-family: 'Inter', sans-serif;
+    font-size: 32px;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-image: url('/images/pattern-curve.svg');
+    background-repeat: no-repeat;
+    background-position: 0% 100%;
+}
+
+#main-div {
+    position: absolute;
+    left: 50%;
+    top: 80px;
+    transform: translateX(-50%);
+
+}
+
+
+
+#content-div {
+    width: 1120px;
+    height: 540px;
+    display: flex;
+    flex-direction: row;
+    overflow: visible;
+}
+
+#background-div {
+    position: absolute;
+    z-index: -1;
+    width: 120%;
+    height: 120%;
+    top: -10.5%;
+    background-image: url('/images/pattern-bg.svg');
+    background-repeat: no-repeat;
+    background-position: 79.5% 0%;
+}
+
+
+#testimonial-box {
+    overflow: visible;
+    position: relative;
+    z-index: 1;
+    width: 580px;
+    background-image: url('/images/pattern-quotes.svg');
+    background-repeat: no-repeat;
+    background-position: 21% 30%;
+}
+
+.testimonial {
+    top: 5.4rem;
+    position: absolute;
+    width: 110%;
+
+}
+
+.quote {
+    position: relative;
+    font-size: 1.115rem;
+    font-weight: 300;
+}
+
+.name {
+    font-size: 0.65rem;
+    font-weight: 700;
+}
+
+.role {
+    font-size: 0.65rem;
+    color: var(--grayish-blue);
+    font-weight: 300;
+}
+
+.hidden-text {
+    visibility: hidden;
+}
+
+.fade-in {
+    animation: fade-in 500ms ease-in-out forwards;
+}
+
+.fade-out {
+    animation: fade-out 500ms ease-in-out forwards;
+}
+
+
+
+#picture-box {
+    position: relative;
+    overflow: hidden;
+    width: 540px;
+    border-radius: 4px;
+    box-shadow: 0px 55px 25px -25px hsla(235, 20%, 21.6%, 25%);
+}
+
+.picture {
+    position: absolute;
+    width: 540px;
+}
+
+.hidden-pic {
+    z-index: -1;
+}
+
+.exit-left {
+    animation: exit-left 600ms ease forwards;
+}
+
+.enter-left {
+    animation: enter-left 600ms ease forwards;
+}
+
+.exit-right {
+    animation: exit-right 600ms ease forwards;
+}
+
+.enter-right {
+    animation: enter-right 600ms ease forwards;
+}
+
+
+
+#control-div {
+    position: relative;
+    width: 114px;
+    height: 58px;
+    left: 638px;
+    top: -29px;
+}
+
+
+button {
+    border-radius: 50%;
+    z-index: 10;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#button-prev {
+    position: absolute;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+#button-prev:active {
+    box-shadow: -3px 0px 3px rgba(0, 0, 0, .25);
+}
+
+#button-next {
+    position: absolute;
+    width: 58px;
+    height: 58px;
+    left: 60px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+#button-next:active {
+    box-shadow: 3px 0px 3px rgba(0, 0, 0, .25);
+}
+
+.control-icon {
+    position: relative;
+}
+
+#rectangle {
+    position: absolute;
+    width: 60px;
+    height: 58px;
+    left: 29px;
+    background-color: white;
+}
+
+
+
+@media screen and (max-width: 400px) {
+    body {
+        background-size: 100%;
+        overflow: hidden;
+    }
+
+    #content-div {
+        width: 255px;
+        height: auto;
+        flex-direction: column-reverse;
+    }
+
+    #background-div {
+        top: -10.5%;
+        background-position: 140% 8%;
+        background-size: 108%;
+    }
+
+    #testimonial-box {
+        width: 300px;
+        height: 300px;
+        background-position: 50% 25%;
+        background-size: 22%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .testimonial {
+        top: 2.3rem;
+        width: 100%;
+    
+    }
+    .quote {
+        text-align: center;
+        font-size: .55rem;
+        font-weight: 300;
+    }
+
+    .name-and-role {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .name {
+        font-size: .45rem;
+    }
+
+    .role {
+        font-size: .45rem
+    }
+
+    #picture-box {
+        position: relative;
+        overflow: hidden;
+        width: 255px;
+        height: 255px;
+        border-radius: 4px;
+    }
+    
+    .picture {
+        width: 255px;
+        height: 255px;
+    }
+
+    #control-div {
+        position: absolute;
+        width: 82px;
+        height: 40px;
+        left: 88px;
+        top: 235px;
+    }
+
+    .control-icon {
+        width: 10px;
+        height: 14px;
+    }
+
+    #button-prev {
+        width: 40px;
+        height: 40px;
+    }
+
+    #button-next {
+        width: 40px;
+        height: 40px;
+        left: 42px;
+    }
+    #rectangle {
+        position: absolute;
+        width: 42px;
+        height: 40px;
+        left: 21px;
+    }
+}
+
+
+
+
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
